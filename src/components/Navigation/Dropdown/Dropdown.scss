@@ -1,0 +1,75 @@
+.dropdown {
+  position: absolute;
+  top: 54px;
+  width: 240px;
+  transform: translateX(-45%);
+  background-color: var(--bg-dropdown);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  overflow: hidden;
+  transition: height var(--speed) ease;
+  color: var(--font-color);
+}
+
+.dropdown-item {
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--bg-dropdown);
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+  margin: 0;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(var(--hover-brightness));
+  }
+
+  & svg {
+    fill: var(--font-color);
+  }
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+
+.menu-primary-enter-active {
+  transform: translateX(0);
+  transition: all var(--speed) ease;
+}
+
+.menu-primary-exit {
+  position: absolute;
+}
+
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+
+.menu-secondary-enter-active {
+  transform: translateX(0);
+  transition: all var(--speed) ease;
+}
+
+.menu-secondary-exit {
+  position: absolute;
+}
+
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+}
