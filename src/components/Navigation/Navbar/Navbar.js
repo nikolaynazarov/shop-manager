@@ -5,9 +5,7 @@ import './Navbar.scss'
 const Navbar = (props) => {
   return (
     <nav className="navbar">
-      <ul className="navbar-list">
-        { props.children }
-      </ul>
+      { props.children }
     </nav>
   )
 }

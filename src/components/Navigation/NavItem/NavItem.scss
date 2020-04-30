@@ -21,10 +21,4 @@
       filter: brightness(var(--hover-brightness));
     }
   }
-
-  & svg {
-    fill: var(--font-color);
-    width: 24px;
-    height: 24px;
-  }
 }

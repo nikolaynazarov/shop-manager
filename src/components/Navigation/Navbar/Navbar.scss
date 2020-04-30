@@ -4,15 +4,17 @@
   left: 0;
   width: 100%;
   height: var(--nav-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--bg-nav);
-  color: var(--text);
+  color: var(--white);
   padding: 1rem 1rem;
-  border: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 
-  &-list {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
+  & svg {
+    fill: #fff;
+    width: 24px;
+    height: 24px;
   }
 }
