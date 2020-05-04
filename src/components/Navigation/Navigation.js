@@ -14,6 +14,7 @@ import { ReactComponent as ArrowRightIcon } from '../../icons/arrow-right.svg'
 import { ReactComponent as ArrowLeftIcon } from '../../icons/arrow-left.svg'
 import { ReactComponent as GearIcon } from '../../icons/gear.svg'
 import { ReactComponent as ProfileMenuIcon } from '../../icons/profile-menu.svg'
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 
 export const Navigation = () => {
   const [activeMenu, setActiveMenu] = useState('main')
@@ -45,7 +46,7 @@ export const Navigation = () => {
                   classNames='menu-primary'
                 >
                   <div className='menu'>
-                    <DropdownItem>My Profile</DropdownItem>
+                    <DropdownItem>Profile menu</DropdownItem>
                     <DropdownItem
                       leftIcon={ <GearIcon /> }
                       rightIcon={ <ArrowRightIcon /> }
@@ -73,7 +74,7 @@ export const Navigation = () => {
                     <DropdownItem>Settings</DropdownItem>
                     <DropdownItem>Settings1</DropdownItem>
                     <DropdownItem>Settings2</DropdownItem>
-                    <DropdownItem>Settings3</DropdownItem>
+                    <DropdownItem><ThemeSwitcher /></DropdownItem>
                   </div>
                 </CSSTransition>
               </div>

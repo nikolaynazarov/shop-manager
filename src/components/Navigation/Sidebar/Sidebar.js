@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
+import { useOnClickOutside } from '../../../customHooks/useHooks';
 
 import { CSSTransition } from 'react-transition-group'
 
@@ -11,19 +12,12 @@ const Sidebar = (props) => {
   const node = useRef()
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
-  useEffect(() => {
-    document.addEventListener("click", clickOutsideHandler);
-    return () => {
-      document.removeEventListener("click", clickOutsideHandler);
-    };
-  }, []);
-
   // close sidebar when click outside of navitem
-  const clickOutsideHandler = (e) => {
-    if (node.current && !node.current.contains(e.target)) {
-      setSidebarOpen(false)
-    }
+  const clickOutsideHandler = () => {
+    setSidebarOpen(false)
   }
+
+  useOnClickOutside(node, clickOutsideHandler)
 
   return (
     <div className="sidebar" ref={ node }>

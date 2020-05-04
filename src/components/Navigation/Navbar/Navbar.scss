@@ -7,10 +7,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-nav);
+  background-color: var(--bg-secondary);
   color: var(--white);
   padding: 1rem 1rem;
-  border-bottom: 1px solid var(--border-color);
+
+  & * {
+    background-color: var(--bg-secondary);
+  }
 
   & svg {
     fill: #fff;

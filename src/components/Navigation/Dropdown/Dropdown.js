@@ -5,9 +5,9 @@ import './Dropdown.scss'
 const Dropwdown = (props) => {
 
   return (
-    <>
+    <ul>
       { props.children }
-    </>
+    </ul>
   )
 }
 

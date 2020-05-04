@@ -1,25 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 
 import './NavItem.scss'
+import { useOnClickOutside } from '../../../customHooks/useHooks'
 
 const NavItem = (props) => {
   const node = useRef()
   const [open, setOpen] = useState(false)
 
-
-  useEffect(() => {
-    document.addEventListener("click", clickOutsideHandler);
-    return () => {
-      document.removeEventListener("click", clickOutsideHandler);
-    };
-  }, []);
-
   // close dropdown when click outside of navitem
-  const clickOutsideHandler = (e) => {
-    if (node.current && !node.current.contains(e.target)) {
-      setOpen(false)
-    }
+  const clickOutsideHandler = () => {
+    setOpen(false)
   }
+
+  useOnClickOutside(node, clickOutsideHandler)
 
   const openHandler = () => {
     setOpen(!open)

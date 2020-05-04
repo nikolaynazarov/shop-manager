@@ -1,11 +1,14 @@
 import React from 'react';
+import { ThemeProvider } from './components/ThemeProvider/ThemeProvider';
 import { Navigation } from './components/Navigation/Navigation';
 
 function App() {
   return (
-    <>
-      <Navigation />
-    </>
+    <ThemeProvider>
+      <div className="App">
+        <Navigation />
+      </div>
+    </ThemeProvider>
   );
 }
 

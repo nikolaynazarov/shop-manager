@@ -2,12 +2,20 @@ import React from 'react'
 
 const DropdownItem = (props) => {
   const { goToMenu, setActiveMenu } = props;
+
+  const changeMenuHandler = () => {
+    if (goToMenu) {
+      goToMenu && setActiveMenu(goToMenu)
+    }
+
+    return;
+  }
   return (
-    <p className='dropdown-item' onClick={ () => goToMenu && setActiveMenu(goToMenu) } >
-      <span className='icon-left'>{ props.leftIcon }</span>
+    <li className='dropdown-item' onClick={ changeMenuHandler } >
+      { props.leftIcon }
       { props.children }
-      <span className='icon-right'>{ props.rightIcon }</span>
-    </p>
+      { props.rightIcon }
+    </li>
   )
 }
 
