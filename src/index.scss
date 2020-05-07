@@ -23,23 +23,13 @@ code {
 }
 
 :root {
-  --gray0: #f8f8f8;
+  --gray0: #ffffff;
   --gray1: #f1f2f3;
   --gray2: #b2becd;
   --gray3: #6c7983;
   --gray4: #454e56;
   --gray5: #2a2e35;
   --gray6: #12181b;
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
@@ -52,7 +42,7 @@ code {
   --light: #f8f9fa;
   --dark: #343a40;
   --font-size: 16px;
-  --nav-size: 3rem;
+  --nav-size: 4rem;
   --border-radius: 8px;
   --button-size: calc(var(--nav-size) * 0.8);
   --speed: 500ms; // for animations
@@ -61,6 +51,9 @@ code {
 .App {
   width: 100%;
   height: 100vh;
+  padding-top: var(--nav-size);
+  padding-left: 1rem;
+  padding-right: 1rem;
   color: var(--font-color);
   background-color: var(--bg-primary);
   transition: var(--speed) ease-in-out;
@@ -71,7 +64,8 @@ code {
   --bg-secondary: var(--gray5);
   --bg-accent: var(--gray5);
   --font-color: var(--gray0);
-  --border-color: var(--gray5);
+  --border-color: var(--gray4);
+  --muted-color: rgba(255, 255, 255, 0.54);
   --hover-brightness: 1.2;
 }
 .light-theme {
@@ -79,7 +73,8 @@ code {
   --bg-secondary: var(--primary);
   --bg-accent: var(--gray1);
   --font-color: var(--gray6);
-  --border-color: var(--gray2);
+  --border-color: var(--gray3);
+  --muted-color: rgba(0, 0, 0, 0.54);
   --hover-brightness: 0.9;
 }
 
@@ -92,4 +87,9 @@ ul {
 a {
   color: currentColor;
   text-decoration: none;
+}
+
+input,
+button {
+  outline: none;
 }

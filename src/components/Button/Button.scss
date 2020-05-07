@@ -1,0 +1,22 @@
+.btn {
+  vertical-align: middle;
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size);
+  color: var(--white);
+  border: none;
+  background-color: var(--primary);
+  border-radius: 5px;
+  transition: filter 200ms ease;
+  transition: transform 400ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(var(--hover-brightness));
+  }
+
+  &-icon {
+    transform-origin: center;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+  }
+}
