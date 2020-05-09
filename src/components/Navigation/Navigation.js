@@ -36,48 +36,46 @@ export const Navigation = () => {
 
         <NavBarList>
           <NavItem icon={ <ProfileMenuIcon /> } >
-            <Dropwdown>
-              <div className='dropdown' style={ { height: menuHeight } }>
-                <CSSTransition
-                  in={ activeMenu === 'main' }
-                  onEnter={ calculateHeight }
-                  unmountOnExit
-                  timeout={ 500 }
-                  classNames='menu-primary'
-                >
-                  <div className='menu'>
-                    <DropdownItem>Profile menu</DropdownItem>
-                    <DropdownItem
-                      leftIcon={ <GearIcon /> }
-                      rightIcon={ <ArrowRightIcon /> }
-                      setActiveMenu={ setActiveMenu }
-                      goToMenu={ 'settings' }
-                    >
-                      Settings
+            <Dropwdown height={ menuHeight }>
+              <CSSTransition
+                in={ activeMenu === 'main' }
+                onEnter={ calculateHeight }
+                unmountOnExit
+                timeout={ 500 }
+                classNames='menu-primary'
+              >
+                <ul className='menu'>
+                  <DropdownItem>Profile menu</DropdownItem>
+                  <DropdownItem
+                    leftIcon={ <GearIcon /> }
+                    rightIcon={ <ArrowRightIcon /> }
+                    setActiveMenu={ setActiveMenu }
+                    goToMenu={ 'settings' }
+                  >
+                    Settings
                     </DropdownItem>
-                  </div>
-                </CSSTransition>
+                </ul>
+              </CSSTransition>
 
-                <CSSTransition
-                  in={ activeMenu === 'settings' }
-                  onEnter={ calculateHeight }
-                  unmountOnExit
-                  timeout={ 500 }
-                  classNames='menu-secondary'
-                >
-                  <div className='menu'>
-                    <DropdownItem
-                      leftIcon={ <ArrowLeftIcon /> }
-                      setActiveMenu={ setActiveMenu }
-                      goToMenu={ 'main' }
-                    />
-                    <DropdownItem>Settings</DropdownItem>
-                    <DropdownItem>Settings1</DropdownItem>
-                    <DropdownItem>Settings2</DropdownItem>
-                    <DropdownItem><ThemeSwitcher /></DropdownItem>
-                  </div>
-                </CSSTransition>
-              </div>
+              <CSSTransition
+                in={ activeMenu === 'settings' }
+                onEnter={ calculateHeight }
+                unmountOnExit
+                timeout={ 500 }
+                classNames='menu-secondary'
+              >
+                <ul className='menu'>
+                  <DropdownItem
+                    leftIcon={ <ArrowLeftIcon /> }
+                    setActiveMenu={ setActiveMenu }
+                    goToMenu={ 'main' }
+                  />
+                  <DropdownItem>Settings</DropdownItem>
+                  <DropdownItem>Settings1</DropdownItem>
+                  <DropdownItem>Settings2</DropdownItem>
+                  <DropdownItem><ThemeSwitcher /></DropdownItem>
+                </ul>
+              </CSSTransition>
             </Dropwdown>
           </NavItem>
         </NavBarList>

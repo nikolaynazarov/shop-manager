@@ -20,6 +20,7 @@ code {
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
 }
 
 :root {
@@ -46,6 +47,8 @@ code {
   --border-radius: 8px;
   --button-size: calc(var(--nav-size) * 0.8);
   --speed: 500ms; // for animations
+  --lighten: inset 0 0 0 10em rgba(255, 255, 255, 0.2);
+  --darken: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.1);
 }
 
 .App {
@@ -67,6 +70,7 @@ code {
   --border-color: var(--gray4);
   --muted-color: rgba(255, 255, 255, 0.54);
   --hover-brightness: 1.2;
+  --box-hover: var(--lighten);
 }
 .light-theme {
   --bg-primary: var(--white);
@@ -76,6 +80,7 @@ code {
   --border-color: var(--gray3);
   --muted-color: rgba(0, 0, 0, 0.54);
   --hover-brightness: 0.9;
+  --box-hover: var(--darken);
 }
 
 ul {

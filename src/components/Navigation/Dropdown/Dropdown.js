@@ -2,11 +2,11 @@ import React from 'react'
 
 import './Dropdown.scss'
 
-const Dropwdown = (props) => {
+const Dropwdown = ({ children, height }) => {
 
   return (
-    <ul>
-      { props.children }
+    <ul className="dropdown" style={ { height } }>
+      { children }
     </ul>
   )
 }

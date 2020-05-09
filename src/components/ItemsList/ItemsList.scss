@@ -1,5 +1,7 @@
 .items-list {
   width: 100%;
+  border: 2px solid var(--bg-accent);
+  border-radius: 5px;
 }
 
 .item {
@@ -7,11 +9,39 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid var(--muted-color);
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  border-radius: 8px;
+  padding: 0 10px;
+  transition: box-shadow 100ms ease-in-out;
+
+  &:hover {
+    box-shadow: var(--box-hover);
+  }
+
   &-label {
     width: 50%;
+  }
+
+  &-info {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &-actions {
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow 200ms ease;
+
+    &:hover {
+      box-shadow: var(--box-hover);
+    }
+
+    & svg {
+      fill: var(--danger);
+    }
   }
 }
