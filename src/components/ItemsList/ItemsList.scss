@@ -1,3 +1,5 @@
+@import "../../scss/variables";
+
 .items-list {
   width: 100%;
   border: 2px solid var(--bg-accent);
@@ -9,23 +11,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
-  transition: box-shadow 100ms ease-in-out;
+  padding: 5px 10px;
+  border-bottom: 2px solid var(--bg-accent);
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 100ms ease-in-out;
+  }
 
   &:hover {
     box-shadow: var(--box-hover);
   }
-
   &-label {
     width: 50%;
   }
-
   &-info {
     width: 50%;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
   }
-
   &-actions {
     width: 2rem;
     display: flex;
@@ -35,13 +44,32 @@
     border-radius: 50%;
     cursor: pointer;
     transition: box-shadow 200ms ease;
-
     &:hover {
       box-shadow: var(--box-hover);
     }
-
     & svg {
       fill: var(--danger);
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &-wrapper {
+      flex-direction: column;
+      padding-left: 10px;
+    }
+    &-label {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    &-info {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      & span {
+        margin-right: 1rem;
+      }
     }
   }
 }

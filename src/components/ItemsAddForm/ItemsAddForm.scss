@@ -1,0 +1,29 @@
+@import "../../scss/variables";
+
+.itemsAddForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  @media (max-width: $tablet) {
+    flex-direction: column;
+
+    & input {
+      width: 80%;
+
+      &[type="date"] {
+        width: 80%;
+      }
+      &[type="number"] {
+        width: 80%;
+      }
+    }
+  }
+
+  & .form-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}

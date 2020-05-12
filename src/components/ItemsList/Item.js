@@ -9,11 +9,13 @@ const Item = ({ id, label, amount, expDate, removeItem }) => {
 
   return (
     <li className="item">
-      <p className="item-label">{ label }</p>
-      <p className="item-info">
-        <span className="item-amount">amount: { amount }</span>
-        <span className="item-date">expDate: { expDate }</span>
-      </p>
+      <span className="item-wrapper">
+        <p className="item-label"><strong>{ label }</strong></p>
+        <p className="item-info">
+          <span className="item-info-amount">amount: { amount }</span>
+          <span className="item-info-date">expDate: { expDate }</span>
+        </p>
+      </span>
       <span className="item-actions" onClick={ removeHandler }><DeleteIcon /></span>
     </li>
   )

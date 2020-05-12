@@ -8,7 +8,7 @@ const initialState = {
 const itemsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM:
-      return { ...state, items: [...state.items, action.payload] }
+      return { ...state, items: [action.payload, ...state.items] }
     case REMOVE_ITEM:
       return { ...state, items: state.items.filter(item => item.id !== action.payload) }
     case FETCH_ITEMS:

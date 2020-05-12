@@ -5,6 +5,8 @@ import { addItem } from '../../redux/actions'
 import Input from '../../Layout-components/Input/Input'
 import Button from '../../Layout-components/Button/Button'
 
+import './ItemsAddForm.scss'
+
 const ItemsAddForm = (props) => {
   const [state, setState] = useState({
     label: '',
@@ -35,11 +37,11 @@ const ItemsAddForm = (props) => {
   }
 
   return (
-    <form onSubmit={ submitHandler } >
+    <form onSubmit={ submitHandler } className="itemsAddForm" >
       <Input name="label" value={ state.label } onChangeHandler={ inputHandler } />
       <Input name="amount" value={ state.amount } type={ 'number' } onChangeHandler={ inputHandler } />
       <Input name="expDate" value={ state.expDate } type={ 'date' } onChangeHandler={ inputHandler } />
-      <Button text={ 'Save' } />
+      <span className="form-button"><Button text={ 'Save' } /></span>
     </form>
   )
 }
