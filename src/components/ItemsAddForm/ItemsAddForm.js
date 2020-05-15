@@ -5,6 +5,8 @@ import { addItem } from '../../redux/actions'
 import Input from '../../Layout-components/Input/Input'
 import Button from '../../Layout-components/Button/Button'
 
+import { formatDate } from '../../utils/base_utils'
+
 import './ItemsAddForm.scss'
 
 const ItemsAddForm = (props) => {
@@ -28,7 +30,11 @@ const ItemsAddForm = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    props.addItem(state)
+    props.addItem({
+      label: state.label,
+      amount: state.amount,
+      expDate: formatDate(state.expDate)
+    })
     setState({
       label: '',
       amount: '',
@@ -38,10 +44,14 @@ const ItemsAddForm = (props) => {
 
   return (
     <form onSubmit={ submitHandler } className="itemsAddForm" >
-      <Input name="label" value={ state.label } onChangeHandler={ inputHandler } />
-      <Input name="amount" value={ state.amount } type={ 'number' } onChangeHandler={ inputHandler } />
+      <Input name="label" value={ state.label } placeholder={ 'Item label' } onChangeHandler={ inputHandler } />
+      <Input name="amount" value={ state.amount } placeholder={ 'Amount' } type={ 'number' } onChangeHandler={ inputHandler } />
       <Input name="expDate" value={ state.expDate } type={ 'date' } onChangeHandler={ inputHandler } />
-      <span className="form-button"><Button text={ 'Save' } /></span>
+      <span className="form-button">
+        <Button
+          text={ 'Save' }
+          disabled={ state.label.length && state.amount.length && state.expDate.length ? false : true } />
+      </span>
     </form>
   )
 }

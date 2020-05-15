@@ -2,11 +2,12 @@ import React from 'react'
 
 import './Button.scss'
 
-const Button = ({ text = 'Button', icon }) => {
+const Button = ({ text = 'Button', disabled = false, icon }) => {
   return (
     <button
       className="btn"
       type="submit"
+      disabled={ disabled }
     >
       { text }
       { icon ?

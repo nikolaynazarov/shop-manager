@@ -34,6 +34,14 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    text-align: left;
+
+    &-amount {
+      width: 50%;
+    }
+    &-date {
+      width: 50%;
+    }
   }
   &-actions {
     width: 2rem;

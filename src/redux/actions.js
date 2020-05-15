@@ -11,7 +11,6 @@ export const addItem = item => {
         id: response.data.name,
         ...item,
       }
-      console.log('addItem dispatch')
       dispatch({ type: ADD_ITEM, payload })
     } catch (err) {
       throw new Error(err.message)

@@ -9,6 +9,7 @@ import './ItemsList.scss'
 const ItemsList = ({ items, fetchItems, removeItem }) => {
   useEffect(() => {
     fetchItems()
+    // eslint-disable-next-line
   }, [])
 
   return (
