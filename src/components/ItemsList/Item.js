@@ -13,7 +13,7 @@ const Item = ({ id, label, amount, expDate, removeItem }) => {
         <p className="item-label"><strong>{ label }</strong></p>
         <p className="item-info">
           <span className="item-info-amount">amount: { amount }</span>
-          <span className="item-info-date">expDate: { expDate }</span>
+          <span className="item-info-date">expire date: { expDate }</span>
         </p>
       </span>
       <span className="item-actions" onClick={ removeHandler }><DeleteIcon /></span>

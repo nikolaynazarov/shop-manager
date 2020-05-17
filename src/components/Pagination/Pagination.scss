@@ -1,0 +1,24 @@
+.pagination {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-color);
+
+  &-link {
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    margin-right: 0.5rem;
+
+    &:hover {
+      box-shadow: var(--box-hover);
+    }
+  }
+
+  .active {
+    box-shadow: var(--box-hover);
+  }
+}
