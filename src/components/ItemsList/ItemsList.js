@@ -9,7 +9,7 @@ import './ItemsList.scss'
 
 const ItemsList = ({ items, fetchItems, removeItem }) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage, setItemsPerPage] = useState(1)
+  const [itemsPerPage, setItemsPerPage] = useState(10)
 
   useEffect(() => {
     fetchItems()
@@ -22,8 +22,11 @@ const ItemsList = ({ items, fetchItems, removeItem }) => {
   const currentItems = items.slice(indexOfFirstItem, indexOfLastItem)
 
   return (
-    <>
-      <ul className="items-list">
+    <div className="items-list">
+      { !items.length &&
+        <p className="items-list-message"><h3>No items added</h3></p>
+      }
+      <ul>
         { items ?
           currentItems.map(item => (
             <Item
@@ -43,7 +46,7 @@ const ItemsList = ({ items, fetchItems, removeItem }) => {
         currentPage={ currentPage }
         setCurrentPage={ setCurrentPage }
       />
-    </>
+    </div>
   )
 }
 

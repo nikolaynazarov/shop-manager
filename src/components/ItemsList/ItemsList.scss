@@ -2,18 +2,36 @@
 
 .items-list {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 250px;
   border: 2px solid var(--bg-accent);
   border-radius: 5px;
+
+  & ul {
+    width: 100%;
+  }
+
+  &-message {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .item {
   width: 100%;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px 10px;
   border-bottom: 2px solid var(--bg-accent);
-  transition: box-shadow 200ms ease-in-out;
+  transition: box-shadow 150ms ease-in-out;
 
   &-wrapper {
     width: 100%;
@@ -34,13 +52,14 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    text-align: left;
 
     &-amount {
-      width: 50%;
+      width: 35%;
+      text-align: left;
     }
     &-date {
-      width: 50%;
+      width: 65%;
+      text-align: center;
     }
   }
   &-actions {
@@ -76,7 +95,7 @@
       justify-content: flex-start;
 
       & span {
-        margin-right: 1rem;
+        text-align: left;
       }
     }
   }

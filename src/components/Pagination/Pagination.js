@@ -42,23 +42,25 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, setCurrentPage, num
 
   return (
     <nav>
-      <ul className="pagination">
-        <span className="pagination-link" onClick={ getFirstPage }>&laquo;</span>
-        <span className="pagination-link" onClick={ previousPage }>&lt;</span>
-        { pageNumbers
-          .slice(pagesBefore, pagesAfter)
-          .map(number => (
-            <li key={ number } className="pagination-item">
-              <span
-                className={ `pagination-link ${number === currentPage ? 'active' : ''}` }
-                onClick={ () => paginate(number) }>
-                { number }
-              </span>
-            </li>
-          )) }
-        <span className="pagination-link" onClick={ nextPage }>&gt;</span>
-        <span className="pagination-link" onClick={ getLastPage }>&raquo;</span>
-      </ul>
+      { pageNumbers.length > 1 &&
+        <ul className="pagination">
+          <span className="pagination-link" onClick={ getFirstPage }>&laquo;</span>
+          <span className="pagination-link" onClick={ previousPage }>&lt;</span>
+          { pageNumbers
+            .slice(pagesBefore, pagesAfter)
+            .map(number => (
+              <li key={ number } className="pagination-item">
+                <span
+                  className={ `pagination-link ${number === currentPage ? 'active' : ''}` }
+                  onClick={ () => paginate(number) }>
+                  { number }
+                </span>
+              </li>
+            )) }
+          <span className="pagination-link" onClick={ nextPage }>&gt;</span>
+          <span className="pagination-link" onClick={ getLastPage }>&raquo;</span>
+        </ul>
+      }
     </nav>
   )
 }
