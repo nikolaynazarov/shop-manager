@@ -9,7 +9,7 @@ import './ItemsList.scss'
 
 const ItemsList = ({ items, fetchItems, removeItem }) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage, setItemsPerPage] = useState(5)
+  const [itemsPerPage, setItemsPerPage] = useState(1)
 
   useEffect(() => {
     fetchItems()
@@ -41,7 +41,8 @@ const ItemsList = ({ items, fetchItems, removeItem }) => {
         itemsPerPage={ itemsPerPage }
         totalItems={ items.length }
         currentPage={ currentPage }
-        setCurrentPage={ setCurrentPage } />
+        setCurrentPage={ setCurrentPage }
+      />
     </>
   )
 }
