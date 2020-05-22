@@ -10,6 +10,14 @@
   border: 2px solid var(--bg-accent);
   border-radius: 5px;
 
+  &-options {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 3px solid var(--bg-accent);
+  }
+
   & ul {
     width: 100%;
   }
@@ -56,6 +64,7 @@
     &-amount {
       width: 35%;
       text-align: left;
+      padding: 1rem;
     }
     &-date {
       width: 65%;

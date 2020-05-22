@@ -5,7 +5,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   font-size: var(--font-size);
-  background-color: var(--bg);
+  background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,7 +57,7 @@ code {
 .App {
   width: 100%;
   min-height: 100vh;
-  padding: var(--nav-size) 1rem 0 1rem;
+  padding: var(--nav-size) 1rem;
   color: var(--font-color);
   background-color: var(--bg-primary);
 }

@@ -6,10 +6,12 @@ import Item from './Item'
 import Pagination from '../Pagination/Pagination'
 
 import './ItemsList.scss'
+import Select from '../../Layout-components/Select/Select'
 
 const ItemsList = ({ items, fetchItems, removeItem }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(10)
+  const itemsPerPageOptions = [5, 10, 15, 20, 50]
 
   useEffect(() => {
     fetchItems()
@@ -21,11 +23,20 @@ const ItemsList = ({ items, fetchItems, removeItem }) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = items.slice(indexOfFirstItem, indexOfLastItem)
 
+  const pageOptionsHandler = (e) => {
+    setItemsPerPage(e.target.value)
+  }
+
   return (
     <div className="items-list">
       { !items.length &&
-        <p className="items-list-message"><h3>No items added</h3></p>
+        <div className="items-list-message"><h3>No items added</h3></div>
       }
+      <div className="items-list-options">
+        <Select label={ "Items/page" } value={ itemsPerPage } onChange={ pageOptionsHandler } >
+          { itemsPerPageOptions.map(option => <option key={ option } value={ option }>{ option }</option>) }
+        </Select>
+      </div>
       <ul>
         { items ?
           currentItems.map(item => (
