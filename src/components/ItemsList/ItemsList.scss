@@ -38,7 +38,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 10px;
-  border-bottom: 2px solid var(--bg-accent);
+  border: 1px solid var(--bg-accent);
   transition: box-shadow 150ms ease-in-out;
 
   &-wrapper {

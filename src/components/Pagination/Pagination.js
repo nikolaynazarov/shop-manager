@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Pagination.scss'
 
-const Pagination = ({ itemsPerPage, totalItems, currentPage, setCurrentPage, numberOfPages = 3 }) => {
+const Pagination = ({ itemsPerPage, totalItems, currentPage, setCurrentPage, numberOfPages = 3 }, className) => {
   const pageNumbers = []
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
@@ -43,7 +43,7 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, setCurrentPage, num
   return (
     <nav>
       { pageNumbers.length > 1 &&
-        <ul className="pagination">
+        <ul className={ `pagination ${className}` }>
           <span className="pagination-link" onClick={ getFirstPage }>&laquo;</span>
           <span className="pagination-link" onClick={ previousPage }>&lt;</span>
           { pageNumbers

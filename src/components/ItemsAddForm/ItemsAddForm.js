@@ -5,8 +5,6 @@ import { addItem } from '../../redux/actions'
 import Input from '../../Layout-components/Input/Input'
 import Button from '../../Layout-components/Button/Button'
 
-import { formatDate } from '../../utils/base_utils'
-
 import './ItemsAddForm.scss'
 
 const ItemsAddForm = (props) => {
@@ -33,7 +31,7 @@ const ItemsAddForm = (props) => {
     props.addItem({
       label: state.label,
       amount: state.amount,
-      expDate: formatDate(state.expDate)
+      expDate: state.expDate
     })
     setState({
       label: '',

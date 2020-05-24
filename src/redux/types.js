@@ -1,3 +1,8 @@
 export const ADD_ITEM = 'ADD_ITEM'
 export const REMOVE_ITEM = 'REMOVE_ITEM'
 export const FETCH_ITEMS = 'FETCH_ITEMS'
+
+export const SORT_BY_EXP_DATE_ASC = 'SORT_BY_EXP_DATE_ASC'
+export const SORT_BY_EXP_DATE_DESC = 'SORT_BY_EXP_DATE_DESC'
+export const SORT_BY_LABEL_ASC = 'SORT_BY_LABEL_ASC'
+export const SORT_BY_LABEL_DESC = 'SORT_BY_LABEL_DESC'
