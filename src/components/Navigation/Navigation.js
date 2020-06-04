@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+
+import { CSSTransition } from 'react-transition-group'
+// Components
 import Navbar from './Navbar/Navbar'
 import Sidebar from './Sidebar/Sidebar'
 import NavItem from './NavItem/NavItem'
@@ -6,15 +9,13 @@ import Dropwdown from './Dropdown/Dropdown'
 import DropdownItem from './Dropdown/DropdownItem'
 import NavBarList from './NavbarList/NavBarList'
 import MenuItem from '../MenuItem/MenuItem'
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 
-import { CSSTransition } from 'react-transition-group'
-
-
+// Icons
 import { ReactComponent as ArrowRightIcon } from '../../icons/arrow-right.svg'
 import { ReactComponent as ArrowLeftIcon } from '../../icons/arrow-left.svg'
 import { ReactComponent as GearIcon } from '../../icons/gear.svg'
 import { ReactComponent as ProfileMenuIcon } from '../../icons/profile-menu.svg'
-import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 
 export const Navigation = () => {
   const [activeMenu, setActiveMenu] = useState('main')
@@ -29,9 +30,8 @@ export const Navigation = () => {
     <>
       <Navbar>
         <Sidebar>
-          <MenuItem leftIcon={ <ProfileMenuIcon /> }>Link 1</MenuItem>
-          <MenuItem leftIcon={ <ProfileMenuIcon /> }>Link 2</MenuItem>
-          <MenuItem leftIcon={ <ProfileMenuIcon /> }>Link 3</MenuItem>
+          <MenuItem to="/" leftIcon={ <ProfileMenuIcon /> }>Home</MenuItem>
+          <MenuItem to="/add-items" leftIcon={ <ProfileMenuIcon /> }>Add items</MenuItem>
         </Sidebar>
 
         <NavBarList>

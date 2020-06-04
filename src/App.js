@@ -1,19 +1,28 @@
 import React from 'react';
+import {
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
+
 import { ThemeProvider } from './components/ThemeProvider/ThemeProvider';
 import { Navigation } from './components/Navigation/Navigation';
-import ItemsAddForm from './components/ItemsAddForm/ItemsAddForm';
-import ItemsList from './components/ItemsList/ItemsList';
+// Pages
+import HomePage from './pages/HomePage/HomePage'
+import AddItemsPage from './pages/AddItemsPage/AddItemsPage'
 
-function App() {
+function App({ history }) {
   return (
     <ThemeProvider>
-      <Navigation />
-      <div className="App">
-        <ItemsAddForm />
-        <ItemsList />
-      </div>
+      <Navigation />>
+      <Switch>
+        <div className="App">
+          <Route path='/' component={ HomePage } exact />
+          <Route path='/add-items' component={ AddItemsPage } />
+        </div>
+      </Switch>
     </ThemeProvider>
   );
 }
 
-export default App;
+export default withRouter(App);

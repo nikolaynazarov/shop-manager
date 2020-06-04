@@ -1,13 +1,15 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import './MenuItem.scss';
 
-const MenuItem = (props) => {
+const MenuItem = ({ leftIcon, children, to }) => {
   return (
-    <p className="menu-item">
-      <span className='icon-left'>{ props.leftIcon }</span>
-      <span className="menu-item-text">{ props.children }</span>
-    </p>
+    <Link className="menu-item" to={ to }>
+      <span className='icon-left'>{ leftIcon }</span>
+      <span className="menu-item-text">{ children }</span>
+    </Link>
   )
 }
 

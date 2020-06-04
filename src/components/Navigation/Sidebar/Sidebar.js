@@ -7,7 +7,7 @@ import { ReactComponent as MenuIcon } from '../../../icons/list.svg';
 
 import './Sidebar.scss'
 
-const Sidebar = (props) => {
+const Sidebar = ({ children }) => {
 
   const node = useRef()
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -32,7 +32,7 @@ const Sidebar = (props) => {
         timeout={ 700 }
       >
         <ul className="sidebar-menu">
-          { props.children }
+          { children }
         </ul>
       </CSSTransition>
     </div>

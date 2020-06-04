@@ -12,6 +12,9 @@
 
   &[type="date"] {
     width: 150px;
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+    }
   }
   &[type="number"] {
     width: 100px;
@@ -22,6 +25,5 @@
 
   &:focus {
     border-bottom: 2px solid var(--primary);
-    //box-shadow: 0px 10px 19px -13px rgba(0, 123, 255, 1);
   }
 }
