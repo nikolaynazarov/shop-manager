@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Input.scss'
 
-const Input = ({ value, onChangeHandler, name, type = 'text', placeholder = 'Placeholder' }) => {
+const Input = ({ value, onChangeHandler, name, type = 'text', autoComplete = 'off', placeholder = 'Placeholder' }) => {
   return (
     <input
       type={ type }
@@ -11,6 +11,7 @@ const Input = ({ value, onChangeHandler, name, type = 'text', placeholder = 'Pla
       placeholder={ placeholder }
       value={ value }
       onChange={ onChangeHandler }
+      autoComplete={ autoComplete }
     />
   )
 }

@@ -8,6 +8,7 @@ import {
 import { ThemeProvider } from './components/ThemeProvider/ThemeProvider';
 import { Navigation } from './components/Navigation/Navigation';
 // Pages
+import LoginPage from './pages/LoginPage/LoginPage'
 import HomePage from './pages/HomePage/HomePage'
 import AddItemsPage from './pages/AddItemsPage/AddItemsPage'
 
@@ -15,12 +16,13 @@ function App({ history }) {
   return (
     <ThemeProvider>
       <Navigation />>
-      <Switch>
-        <div className="App">
+      <div className="App">
+        <Switch>
           <Route path='/' component={ HomePage } exact />
+          <Route path='/login' component={ LoginPage } />
           <Route path='/add-items' component={ AddItemsPage } />
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </ThemeProvider>
   );
 }
